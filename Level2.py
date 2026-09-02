@@ -383,7 +383,25 @@ print(prodExceptSelf(arr))
 
 
 
-    
+def findEquilibrium(arr):
+    n= len(arr)
+    total_sum=0
+    left_sum=0
+    for i in range(n):
+        total_sum+=arr[i]
+
+    for j in range(n):
+        right_sum= total_sum-arr[j]-left_sum
+
+        if left_sum==right_sum:
+            return j
+        left_sum+=arr[j]
+
+    return -1
+
+arr = [1, 3, 5, 2, 1, 1]
+check16 = findEquilibrium(arr)
+print(check16)    
 
 
 
