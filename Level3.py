@@ -144,7 +144,162 @@ check7=longestPrefix(arr)
 print(check7)
 
 
+def countCharInString(s):
+
+    result = ""
+
+    for i in range(len(s)):
+
+        if s[i] not in result:
+
+            count = 1
+
+            for j in range(i + 1, len(s)):
+
+                if s[i] == s[j]:
+                    count += 1
+
+            print(s[i] + ":" + str(count))
+
+            result += s[i]
 
 
+Input = "programming"
+
+check8 = countCharInString(Input)
+print(check8)
 
 
+def checkBalance(s):
+    count=0
+
+    for i in range(len(s)):
+        if s[i]=="(":
+            count+=1
+
+        elif s[i]==")":
+            count-=1
+
+        if count < 0:
+            return False
+
+
+    if count==0:
+        return True
+
+    return False
+
+s = "())("
+
+check9 = checkBalance(s)
+print(check9)
+
+def findDuplicateChar(s):
+
+    n= len(s)
+
+    result=""
+
+    for i in range(n):
+        count=1
+        for j in range(i+1,n):
+
+            if s[i]==s[j]:
+                count+=1
+        if count>1:
+            if s[i] not in result:
+                result+=s[i]
+
+    return result
+
+s= "aabbcc"
+
+check10=findDuplicateChar(s)
+print(check10)
+
+def firstUniqueChar(s):
+
+    n= len(s)
+    result=""
+
+    for i in range(n):
+        count=0
+        for j in range(n):
+            if s[i]==s[j]:
+                count+=1
+
+        if count==1:
+            return s[i]
+        
+    return False
+
+Input="leetcode"
+
+check11=firstUniqueChar(Input)
+print(check11)
+
+def commonSubstring(s1, s2):
+
+    if s2 in s1:
+        return True
+
+    if s1 in s2:
+        return True
+
+    return False
+
+
+s1 = "hello"
+s2 = "ell"
+
+check12 = commonSubstring(s1, s2)
+print(check12)
+
+
+def commonSubstring(s1, s2):
+
+    if len(s1) < len(s2):
+        temp = s1
+        s1 = s2
+        s2 = temp
+
+    for i in range(len(s1) - len(s2) + 1):
+
+        count = 0
+
+        for j in range(len(s2)):
+
+            if s1[i + j] == s2[j]:
+                count += 1
+
+        if count == len(s2):
+            return True
+
+    return False
+
+s1 = "hello"
+s2 = "ell"
+
+check13 = commonSubstring(s1, s2)
+print(check13)
+
+
+def stringToInteger(s):
+
+    result = 0
+    digits = "0123456789"
+
+    for i in range(len(s)):
+
+        for j in range(10):
+
+            if s[i] == digits[j]:
+                result = result * 10 + j
+
+    return result
+
+
+s = "123"
+
+check14= stringToInteger(s)
+print(check14)

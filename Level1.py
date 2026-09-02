@@ -395,7 +395,3 @@ num=12345
 check24=sumDigit(num)
 print(check24)
 
-
-
-
-
