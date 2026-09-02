@@ -77,6 +77,74 @@ s = "a3b2c1d1"
 check4 = StringDecompression(s)
 print(check4)
 
-        
+def removeDuplicates(s):
+
+    result=""
+
+    for i in range(len(s)):
+
+        if s[i] not in result:
+            result+=s[i]
+
+    return result
+
+s = "programming"
+check5=removeDuplicates(s)
+print(check5)
+
+
+def reverseSent(sent):
+
+    words = []
+    word = ""
+
+    for i in range(len(sent)):
+
+        if sent[i] != " ":
+            word += sent[i]
+
+        else:
+            words.append(word)
+            word = ""
+
+    words.append(word)
+
+    result = ""
+
+    for i in range(len(words)):
+        result = words[i] + " " + result
+
+    return result.strip()
+
+
+sent = "I love Python"
+
+check6 = reverseSent(sent)
+print(check6)
+
+
+def longestPrefix(arr):
+
+    prefix = ""
+
+    for j in range(len(arr[0])):
+
+        for i in range(1, len(arr)):
+
+            if arr[i][j] != arr[0][j]:
+                return prefix
+
+        prefix += arr[0][j]
+
+    return prefix
+
+arr = ["flower", "flow", "flight"]
+
+check7=longestPrefix(arr)
+print(check7)
+
+
+
+
 
 
