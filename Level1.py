@@ -443,3 +443,15 @@ def prodExceptSelf(arr):
 arr = [1, 2, 3, 4,0]
 
 print(prodExceptSelf(arr))
+
+def sumDigit(num):
+    sum=0
+    while(num!=0):
+        rem =num%10
+        sum+=rem
+        num=num//10
+
+    return sum
+num=12345
+check24=sumDigit(num)
+print(check24)
