@@ -333,7 +333,7 @@ check17=prodExceptSelf(arr)
 print(check17)
 
 
-def prodExceptSelf(arr):
+def prodExceptSelf2(arr):
 
     n = len(arr)
     count = 0
@@ -374,12 +374,93 @@ def prodExceptSelf(arr):
         result.append(total // arr[i])
 
     return result
-
-
 arr = [1, 2, 3, 4,0]
-
-print(prodExceptSelf(arr))
+check18=prodExceptSelf2(arr)
+print(check18)
    
+
+def findMaxDiff(arr):
+    n= len(arr)
+    max_diff=float("-inf")
+    for i in range(n):
+        for j in range(i+1, n):
+
+            if arr[j]-arr[i]>max_diff:
+                max_diff=arr[j]-arr[i]
+
+
+    return max_diff
+
+arr = [2, 3, 10, 6, 4, 8, 1]
+check19=findMaxDiff(arr)
+print(check19)
+
+def longestSeq(arr):
+    n=len(arr)
+
+    max_seq=0
+    for i in range(n):
+        count=1
+        current=arr[i]
+
+        while current+1 in arr:
+            current+=1
+            count+=1
+
+
+        if count>max_seq:
+            max_seq=count
+
+
+    return max_seq
+
+arr = [1, 9, 3, 10, 4, 20, 2]
+check20= longestSeq(arr)
+print(check20)
+
+
+def sort012(arr):
+    n = len(arr)
+
+    count0 = 0
+    count1 = 0
+    count2 = 0
+
+    for i in range(n):
+        if arr[i] == 0:
+            count0 += 1
+
+        elif arr[i] == 1:
+            count1 += 1
+
+        else:
+            count2 += 1
+
+
+    index = 0
+
+    for i in range(count0):
+        arr[index] = 0
+        index += 1
+
+    for i in range(count1):
+        arr[index] = 1
+        index += 1
+
+    for i in range(count2):
+        arr[index] = 2
+        index += 1
+
+    return arr
+
+
+arr = [0, 2, 1, 2, 0, 1, 2, 0]
+
+check21 = sort012(arr)
+print(check21)
+
+
+
 
 
 
