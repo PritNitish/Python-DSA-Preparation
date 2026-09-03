@@ -303,3 +303,53 @@ s = "123"
 
 check14= stringToInteger(s)
 print(check14)
+
+
+def longestPalindrome(s):
+
+    n= len(s)
+    longest=""
+
+    for i in range(n):
+        for j in range(i+1,n+1):
+            sub=s[i:j]
+
+            reverse=""
+            for k in range(len(sub)):
+                reverse=sub[k]+reverse
+
+            if sub==reverse:
+                if len(sub)>len(longest):
+                    longest=sub
+
+    return longest
+
+s = "babad"
+
+check15 = longestPalindrome(s)
+print(check15)
+
+
+def isIsomorphic(s1, s2):
+
+    if len(s1) != len(s2):
+        return False
+
+    for i in range(len(s1)):
+
+        for j in range(i):
+            if s1[i] == s1[j]:
+                if s2[i] != s2[j]:
+                    return False
+
+            if s2[i] == s2[j]:
+                if s1[i] != s1[j]:
+                    return False
+
+    return True
+
+s1 = "egg"
+s2 = "add"
+
+check16= isIsomorphic(s1, s2)
+print(check16)
