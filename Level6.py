@@ -80,12 +80,26 @@ b = 10
 check6=swapNum(a,b)
 print(check6)
 
+def reverseBits(num):
 
-def nonRepeating(arr):
+    result=0
 
-    n= len(arr)
-    non=0
-    for i in arr:
-        non=n^i
+    while(num!=0):
+
+        bit= num&1
+
+        result=(result<<1) | bit
+
+        num=num>>1
+    return result
+
+num = 13
+
+check7 = reverseBits(num)
+print(check7)
+
+    
+
+
         
 
