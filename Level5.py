@@ -21,3 +21,5 @@ target=16
 
 check1=binarySearch(arr, target)
 print(check1)
+
+
